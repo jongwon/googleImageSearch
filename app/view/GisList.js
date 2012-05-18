@@ -17,7 +17,7 @@ Ext.define('gis.view.GisList', {
 						xtype:'searchfield',
 						id:'search_txt',
 						flex:1,
-						placeHolder:'Search keywords...'
+						placeHolder:'제시카 고메즈'
 					},{
 						xtype:'button',
 						id:'search_btn',
