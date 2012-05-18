@@ -1,0 +1,46 @@
+
+개발 환경 설정
+
+* 서버에 SDK 소스 까지 올리게 되면 소스 용량이 증가해서 무거워지는것 같습니다.
+  그리고, SDK를 소스 안에 두면 이클립스가 엄청 버벅댑니다.
+  그래서 아래와 같이 서비스를 구성했습니다.
+  
+d:/dev					: 루트는 어디에 잡든 관계 없습니다.
+	/sencha
+		/builds
+		/command
+		/docs
+		/examples
+			/kichensink : sencha touch example 들...
+			/...
+		/microloader
+		/pkgs
+		/resources
+		/src
+		/workspace		: eclipse/aptana/titanium studio 등의 workspace를 이곳으로 잡으시면 됩니다.
+			/themesink  : github에 올린데이터
+		*index.html		: 서비스 링크들
+
+	/server
+		/sencha-tomcat
+			/conf
+				/Catalina
+					/localhost
+						*sencha.xml	: d:/dev/sencha 를 docBase로 잡은 tomcat context 파일
+						
+	
+sencha.xml 파일은.. 단순히 아래와 같이 구성하면 됩니다.
+==============================================================================
+<?xml version="1.0"?>
+<Context path="/" docBase="d:/dev/sencha" debug="0" reloadable="true"/>
+==============================================================================
+						
+이렇게 구성하면 http://localhost:8080/sencha/workspace/themesink 주소에 서비스가 올라옵니다.
+
+또 이렇게 한 이유중에 하나가 테마때문에 여러가지 앱들을 작업할 수도 있는데, 그때마다 sdk 를 올릴 수는 없으니까요.
+일단, examples 처럼 여러 앱을 만들기에 편리한 작업환경을 구성해 본 것입니다.
+
+tomcat은 6이나 7을 zip 버전으로 받아서 sencha-tomcat 같은 이름으로 넣어두고 작업하면 됩니다.
+
+
+문서끝.
