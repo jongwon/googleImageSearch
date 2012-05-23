@@ -11,7 +11,7 @@ Ext.define('gis.store.ImageListStore', {
 			url:'https://ajax.googleapis.com/ajax/services/search/images',
 			extraParams:{
 				v:'1.0',
-				q:'고메즈',
+				q:DEFAULT_KEYWORD,
 				rsz:8
 			},
 			reader:{
@@ -25,7 +25,7 @@ Ext.define('gis.store.ImageListStore', {
 		config = config || {};
 		
 		this.data = this._data = this.createDataCollection();
-		this.keyword = '고메즈';
+		this.keyword = DEFAULT_KEYWORD;
 		
 		this.data.setSortRoot('data');
 		this.data.setFilterRoot('data');

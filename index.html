@@ -2,8 +2,25 @@
 <html manifest="" lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Google Image Search</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <title>Google Image Search by Soreply</title>
     <script id="microloader" type="text/javascript" src="../../microloader/development.js"></script>
 </head>
-<body></body>
+<body onload="setTimeout(function(){scrollTo(0,0,0,1);}, 100);"></body>
+<script type="text/javascript">
+  if (navigator.userAgent.indexOf('iPhone')!=-1)
+  {
+   addEventListener("load",function()
+    {
+    setTimeout(hideURLbar,0);
+    },false);
+  }
+// 위에껀 아이폰
+// 요 아래껀 다른폰
+  function hideURLbar()
+  {
+    window.scrollTo(0,1);
+  }
+</script>
 </html>

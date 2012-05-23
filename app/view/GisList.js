@@ -8,8 +8,9 @@ Ext.define('gis.view.GisList', {
 	],
 	config:{
 		title:'Google Image Search',
+		
 		items:[
-			{
+        	{
 				xtype:'toolbar',
 				docked:'top',
 				items:[
@@ -17,7 +18,7 @@ Ext.define('gis.view.GisList', {
 						xtype:'searchfield',
 						id:'search_txt',
 						flex:1,
-						placeHolder:'제시카 고메즈'
+						placeHolder:DEFAULT_KEYWORD
 					},{
 						xtype:'button',
 						id:'search_btn',
@@ -25,7 +26,7 @@ Ext.define('gis.view.GisList', {
 					}
 				]
 			}
-		],
+        ],
 		disableSelection:true,
 		store:'ImageListStore',
 		loadingText:'불러오는 중...',
@@ -35,15 +36,12 @@ Ext.define('gis.view.GisList', {
 				type:'listpaging',
 				autoPaging: true
 			}
-			// ,
-			// {
-				// type:'pullrefresh'
-			// }
 		],
 		
+        
 		itemTpl:[
 			"<div class='item'>",
-				"<div class='image'><img src='{tbUrl}' width='{130}' height='{100}'></div>",
+				"<div class='image'><img src='{tbUrl}'></div>",
 				"<div class='board'>",
 					"<span>{title}</span>",
 				"</div>",

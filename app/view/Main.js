@@ -5,7 +5,28 @@ Ext.define('gis.view.Main', {
     id: 'GisMain',
 
     config: {
-        navigationBar:{},
+    	fullscreen: true,
+        navigationBar:{
+        	docked: 'top',
+            items: [
+                {
+                    xtype: 'button',
+                    iconCls: 'refresh',
+                    id: 'refreshBtn',
+                    align: 'left',
+                    iconMask: true,
+                }
+                ,
+                {
+                    xtype: 'button',
+                    iconCls: 'action',
+                    id: 'krbtn',
+                    align: 'right',
+                    iconMask: true
+                }
+            ]
+        },
+        
         autoDestroy:false,
         items:[
         	{xtype:'GisList'}
