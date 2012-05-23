@@ -14,6 +14,10 @@ Ext.define('gis.controller.Main', {
         },
 
         control: {
+        	gisMain:{
+        		push: 'onDetailPush',
+				pop: 'onDetailPop'
+        	},
             searchBtn: {
                 tap: 'searchBtn'
             },
@@ -31,7 +35,20 @@ Ext.define('gis.controller.Main', {
             }
         }
     },
-    
+    onDetailPush:function(view, item){
+    	this.hideButton();
+    },
+    onDetailPop:function(view, item){
+    	this.showButton();
+    },
+    hideButton:function(){
+    	this.getRefreshBtn().hide();
+    	this.getKrbtn().hide();
+    },
+    showButton:function(){
+    	this.getRefreshBtn().show();
+    	this.getKrbtn().show();
+    },
     refreshKeyword:function(button){
     	
 		var isPhone = Ext.os.deviceType == 'Phone',
